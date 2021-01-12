@@ -54,3 +54,13 @@ media query to show button when on a smaller device
   color: #808080;
   margin: 5px;
 }
+
+.messageSender__option > h3 {
+  font-size: medium;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.messageSender__option:hover {
+  background-color: #eff2f5;
+  border-radius: 1.25rem;
+}

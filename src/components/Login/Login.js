@@ -4,15 +4,23 @@ import "./Login.css";
 import headPic from "../../images/robHeadShot.png";
 import textPic from "../../images/textIcon.png";
 import { auth, provider } from "../../firebase";
+import { actionTypes } from "../Context/Reducer";
+import { useStateValue } from "../Context/StateProvider";
 
 // CREATE DEFAULT SIGN-IN WITH EXAMPLE ACCOUNT
 
 const Login = () => {
+  const [state, dispatch] = useStateValue();
+
   const signIn = () => {
-    // sign in functionality
+    // sign in functionality, push user into the data layer
     auth
       .signInWithPopup(provider)
       .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
         console.log(result);
       })
       .catch((error) => alert(error));

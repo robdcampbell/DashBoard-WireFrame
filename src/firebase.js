@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 // Initialize the app / connect this frontend to the firebase backend
 // passes in the above object ^^
-const firebaseApp = firbase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 // Access to the database
 const db = firebaseApp.firestore();
 // set up auth

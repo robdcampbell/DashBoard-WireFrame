@@ -4,11 +4,11 @@ import "./Post.css";
 
 // {new Date(timestamp?.toDate()).toUTCString()}
 
-const Post = ({ profilePic, iamge, username, timestamp, message }) => {
+const Post = ({ profilePic, image, username, timestamp, message }) => {
   return (
     <div className="post">
       <div className="post__top">
-        <Avatar src={"profulePic"} className="post__avatar" />
+        <Avatar src={profilePic} className="post__avatar" />
         <div className="post__topInfo">
           <h3>{username}</h3>
           <p>Timestamp goes here...</p>
@@ -20,7 +20,7 @@ const Post = ({ profilePic, iamge, username, timestamp, message }) => {
       </div>
 
       <div className="post__image">
-        <img src={"image"} alt="post image" />
+        <img src={image} alt="post image" />
       </div>
     </div>
   );

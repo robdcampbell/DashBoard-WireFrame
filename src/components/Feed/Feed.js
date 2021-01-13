@@ -3,6 +3,8 @@ import "./Feed.css";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender/MessageSender";
 import Post from "./Post/Post";
+import profileImage from "../../images/robHeadShot.png";
+import image from "../../images/detroit.jpg";
 
 // Story component - will most likely delete
 // Message sender
@@ -12,7 +14,13 @@ const Feed = () => {
     <div className="feed">
       <StoryReel />
       <MessageSender />
-      <Post />
+      <Post
+        profilePic={profileImage}
+        message={"It is working..."}
+        timestamp={"timestamp"}
+        username={"username"}
+        image={image}
+      />
       <Post />
       <Post />
     </div>

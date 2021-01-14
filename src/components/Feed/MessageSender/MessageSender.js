@@ -4,10 +4,12 @@ import "./MessageSender.css";
 import VideoCamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticon from "@material-ui/icons/InsertEmoticon";
+import { useStateValue } from "../../Context/StateProvider";
 
 const MessageSender = () => {
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [{ user }, dispatch] = useStateValue();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,13 +24,13 @@ const MessageSender = () => {
     <div className="messageSender">
       <div className="messageSender__top">
         <form>
-          <Avatar />
+          <Avatar src={user.photoURL} />
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="messageSender__input"
             type="text"
-            placeholder={"Whats next?"}
+            placeholder={`What's next ${user.displayName}?`}
           />
           <input
             value={imageUrl}

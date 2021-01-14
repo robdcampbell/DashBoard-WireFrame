@@ -10,13 +10,18 @@ import "./Post.css";
 // {new Date(timestamp?.toDate()).toUTCString()}
 
 const Post = ({ profilePic, image, username, timestamp, message }) => {
+  const testImg =
+    "https://ftw.usatoday.com/wp-content/uploads/sites/90/2017/08/detroit_red_wings_logo-58b8da213df78c353c2346cb.jpg?w=1000&h=600&crop=1";
+
+  console.log(profilePic, image, username, timestamp, message);
+
   return (
     <div className="post">
       <div className="post__top">
         <Avatar src={profilePic} className="post__avatar" />
         <div className="post__topInfo">
           <h3>{username}</h3>
-          <p>Timestamp goes here...</p>
+          <p>Timestamp...</p>
         </div>
       </div>
 
